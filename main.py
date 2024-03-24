@@ -32,6 +32,9 @@ while is_running:
     time.sleep(0.03)
     ball.move()
 
+    if ball.ycor() <= -280 or ball.ycor() >= 280:
+        ball.bounce_on_wall()
+
 
 
 

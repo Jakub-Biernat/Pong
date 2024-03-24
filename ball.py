@@ -8,9 +8,13 @@ class Ball(Turtle):
         self.penup()
         self.color("white")
         self.shape("circle")
-        angle = self.towards(x=400, y=300)
-        self.setheading(angle)
+        self.x_move = 10
+        self.y_move = 10
 
     def move(self):
-        self.forward(10)
+        new_x = self.xcor() + self.x_move
+        new_y = self.ycor() + self.y_move
+        self.goto(new_x, new_y)
 
+    def bounce_on_wall(self):
+        self.y_move *= -1
