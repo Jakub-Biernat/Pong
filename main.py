@@ -1,5 +1,7 @@
 from turtle import Screen
 from paddle import Paddle
+from ball import  Ball
+import time
 
 WIDTH = 800
 HEIGHT = 600
@@ -15,6 +17,7 @@ screen.tracer(0)
 
 l_paddle = Paddle(position=L_POSITION)
 r_paddle = Paddle(position=R_POSITION)
+ball = Ball()
 
 screen.listen()
 screen.onkey(l_paddle.up, "w")
@@ -26,6 +29,8 @@ screen.onkey(r_paddle.down, "Down")
 is_running = True
 while is_running:
     screen.update()
+    time.sleep(0.03)
+    ball.move()
 
 
 
