@@ -29,7 +29,7 @@ screen.onkeypress(r_paddle.down, "Down")
 is_running = True
 while is_running:
     screen.update()
-    time.sleep(0.05)
+    time.sleep(0.07)
     ball.move()
 
     if ball.ycor() <= -280 or ball.ycor() >= 280:
@@ -37,6 +37,9 @@ while is_running:
 
     if (ball.distance(r_paddle) < 50 and ball.xcor() > 320) or (ball.distance(l_paddle) < 50 and ball.xcor() < -320):
         ball.bounce_on_paddle()
+
+    if ball.xcor() > 380 or ball.xcor() < -380:
+        ball.restart()
 
 
 
