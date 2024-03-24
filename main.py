@@ -2,6 +2,7 @@ from turtle import Screen
 from paddle import Paddle
 from ball import Ball
 from scoreboard import Scoreboard
+from centerline import CenterLine
 import time
 
 WIDTH = 800
@@ -20,6 +21,7 @@ l_paddle = Paddle(position=L_POSITION)
 r_paddle = Paddle(position=R_POSITION)
 ball = Ball()
 scoreboard = Scoreboard()
+centerline = CenterLine()
 
 screen.listen()
 screen.onkeypress(l_paddle.up, "w")
