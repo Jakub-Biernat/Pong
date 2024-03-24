@@ -1,6 +1,7 @@
 from turtle import Screen
 from paddle import Paddle
-from ball import  Ball
+from ball import Ball
+from scoreboard import Scoreboard
 import time
 
 WIDTH = 800
@@ -18,13 +19,13 @@ screen.tracer(0)
 l_paddle = Paddle(position=L_POSITION)
 r_paddle = Paddle(position=R_POSITION)
 ball = Ball()
+scoreboard = Scoreboard()
 
 screen.listen()
 screen.onkeypress(l_paddle.up, "w")
 screen.onkeypress(l_paddle.down, "s")
 screen.onkeypress(r_paddle.up, "Up")
 screen.onkeypress(r_paddle.down, "Down")
-
 
 is_running = True
 while is_running:
@@ -40,33 +41,10 @@ while is_running:
 
     if ball.xcor() > 380:
         ball.restart()
+        scoreboard.add_l()
 
     if ball.xcor() < -380:
         ball.restart()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        scoreboard.add_r()
 
 screen.exitonclick()

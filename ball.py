@@ -26,4 +26,3 @@ class Ball(Turtle):
         self.setposition(0, 0)
         self.bounce_on_paddle()
         self.bounce_on_wall()
-
